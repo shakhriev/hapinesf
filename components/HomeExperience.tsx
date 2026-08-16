@@ -77,7 +77,7 @@ export default function HomeExperience() {
             animate={{ opacity: 1 }}
             transition={{ duration: 1.1, ease: "easeInOut" }}
           >
-            <VideoSection onEnded={scrollToContact} />
+            <VideoSection />
             <ContactSection ref={contactRef} />
             <Footer />
           </motion.div>

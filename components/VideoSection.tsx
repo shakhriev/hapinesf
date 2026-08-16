@@ -1,18 +1,8 @@
 "use client";
 
-import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 
-export default function VideoSection({ onEnded }: { onEnded: () => void }) {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [hasError, setHasError] = useState(false);
-
-  const handlePlay = () => {
-    videoRef.current?.play();
-    setIsPlaying(true);
-  };
-
+export default function VideoSection() {
   return (
     <section className="bg-white px-6 py-24 md:py-32">
       <motion.div
@@ -20,45 +10,112 @@ export default function VideoSection({ onEnded }: { onEnded: () => void }) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 1, ease: "easeOut" }}
-        className="mx-auto w-full max-w-[900px]"
+        className="mx-auto max-w-3xl"
       >
-        <div className="relative aspect-video overflow-hidden rounded-3xl bg-neutral-900 shadow-[0_20px_80px_-20px_rgba(0,0,0,0.35)]">
-          {!hasError ? (
-            <video
-              ref={videoRef}
-              src="/video/message.mp4"
-              controls={isPlaying}
-              playsInline
-              preload="metadata"
-              className="h-full w-full object-cover"
-              onEnded={onEnded}
-              onError={() => setHasError(true)}
-            >
-              Your browser does not support video playback.
-            </video>
-          ) : (
-            <div className="flex h-full w-full items-center justify-center px-6 text-center text-sm text-neutral-400">
-              The video will appear here.
-            </div>
-          )}
+        <h1 className="mb-12 text-center text-5xl font-light tracking-wide text-neutral-900">
+          A Message For You
+        </h1>
 
-          {!isPlaying && !hasError && (
-            <button
-              onClick={handlePlay}
-              aria-label="Play video"
-              className="absolute inset-0 flex items-center justify-center bg-black/20 transition-colors duration-500 hover:bg-black/10"
-            >
-              <motion.span
-                whileHover={{ scale: 1.06 }}
-                transition={{ duration: 0.3 }}
-                className="flex h-20 w-20 items-center justify-center rounded-full bg-white/90 shadow-lg backdrop-blur"
-              >
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M8 5v14l11-7L8 5z" fill="#111111" />
-                </svg>
-              </motion.span>
-            </button>
-          )}
+        <div className="space-y-8 text-lg leading-9 text-neutral-700">
+          <p>Hey.</p>
+
+          <p>
+            I hope you're doing well.
+          </p>
+
+          <p>
+            Before anything else, thank you for taking the time to read this.
+          </p>
+
+          <p>
+            We both know things didn't end the way either of us imagined.
+            Somewhere along the way, misunderstandings grew, distance crept in,
+            and what once felt easy became difficult.
+          </p>
+
+          <p>
+            I'm not here to decide who was right or wrong. I'm not here to
+            revisit the past or change anything.
+          </p>
+
+          <p>
+            I just wanted to apologize for the moments when I hurt you,
+            knowingly or unknowingly. I'm sorry for my mistakes, and I'm sorry
+            for the pain that came from my side.
+          </p>
+
+          <p>
+            More than anything, though, I wanted to thank you.
+          </p>
+
+          <p>
+            Thank you for the last three years.
+          </p>
+
+          <p>
+            Thank you for every conversation, every laugh, every little
+            adventure, every lesson, every moment we shared. Those memories will
+            always be part of who I am, and I'll always be grateful that I got
+            to experience them with you.
+          </p>
+
+          <p>
+            I loved you deeply. Whether that changes anything now doesn't really
+            matter. What matters is that it was real, and I'll always be
+            grateful that life gave me the chance to love someone like you.
+          </p>
+
+          <p>
+            This website isn't meant to revisit the past or decide who was right
+            or wrong. I simply wanted our story to have one quiet, beautiful
+            ending.
+          </p>
+
+          <p>
+            I genuinely hope life gives you everything you've ever wished for.
+          </p>
+
+          <p>
+            I hope your career is successful.
+          </p>
+
+          <p>
+            I hope you keep chasing your dreams.
+          </p>
+
+          <p>
+            I hope you laugh often.
+          </p>
+
+          <p>
+            I hope you eat well, sleep enough, and take good care of yourself.
+          </p>
+
+          <p>
+            And please... take care of your heart.
+          </p>
+
+          <p>
+            I won't be there to remind you anymore, so do it for yourself...
+            and maybe a little for the beautiful memories we shared.
+          </p>
+
+          <p>
+            I'm proud of the person you are, and I'll always respect you.
+          </p>
+
+          <p>
+            Thank you for everything you gave me.
+          </p>
+
+          <p>
+            I truly wish you nothing but happiness, peace, and a life full of
+            beautiful moments.
+          </p>
+
+          <p>Take care.</p>
+
+          <p>Goodbye.</p>
         </div>
       </motion.div>
     </section>
