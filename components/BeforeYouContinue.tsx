@@ -20,10 +20,9 @@ export default function BeforeYouContinue({
         </h2>
 
         <div className="mt-8 space-y-5 text-base leading-relaxed text-neutral-600">
-          <p>
-            You don&apos;t have to watch this video, and you don&apos;t have
-            to respond afterwards.
-          </p>
+<p>
+  You don&apos;t have to read this, and you don&apos;t have to respond afterwards.
+</p>
           <p>
             I made this website only because there were a few things I
             wanted to say one last time. Nothing more is expected from you.
